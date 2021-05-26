@@ -6,17 +6,17 @@ public class Mouse_Movement : MonoBehaviour
 {
 
     public float speedH = 2.0f;
+    public float mouseSens = 100f;
     
-    private float yaw ;
+    private float yaw;
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         
-        yaw += speedH * Input.GetAxis("Mouse X");
+        yaw += speedH * Input.GetAxis("Mouse X") * mouseSens;
         // pitch -= speedV * Input.GetAxis("Mouse Y");
 
-        transform.localRotation = Quaternion.Euler(1, yaw, 0.0f);
-
+        transform.eulerAngles = new Vector3(1, yaw, 0.0f);
     }
 }
