@@ -5,7 +5,11 @@ using UnityEngine;
 
 public class Player_Movement : MonoBehaviour
 {
+<<<<<<< Updated upstream
 
+=======
+    public Animation animation;
+>>>>>>> Stashed changes
     public CharacterController controller;
     public float moveSpeed = 12f;
     public float gravity = -9.81f;
@@ -17,7 +21,12 @@ public class Player_Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+<<<<<<< Updated upstream
         if(controller.isGrounded){
+=======
+        if (controller.isGrounded)
+        {
+>>>>>>> Stashed changes
             velocity.y = -2f;
             isGrounded = true;
         }
@@ -35,8 +44,21 @@ public class Player_Movement : MonoBehaviour
         Vector3 move = transform.right * moveX + transform.forward * moveZ;
         controller.Move(move * (moveSpeed * Time.deltaTime));
 
+<<<<<<< Updated upstream
         //Jumping
         if(Input.GetButtonDown("Jump") && isGrounded){
+=======
+        if (Input.GetAxis("Vertical") > 0.05f){
+            animation.Play("Running");
+        }else{
+            animation.CrossFade("Idle");
+            animation.Play("Idle");
+        }
+
+        //Jumping
+        if (Input.GetButtonDown("Jump") && isGrounded)
+        {
+>>>>>>> Stashed changes
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
             isGrounded = false;
         }
@@ -45,4 +67,8 @@ public class Player_Movement : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
     }
+<<<<<<< Updated upstream
 }
+=======
+}
+>>>>>>> Stashed changes
