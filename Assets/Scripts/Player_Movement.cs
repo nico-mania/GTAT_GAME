@@ -39,30 +39,41 @@ public class Player_Movement : MonoBehaviour
         //Keyboard Input
         float moveX = Input.GetAxis("Horizontal");
         float moveZ = Input.GetAxis("Vertical");
+<<<<<<< Updated upstream
+=======
+        
+>>>>>>> Stashed changes
 
         //Movement
         Vector3 move = transform.right * moveX + transform.forward * moveZ;
         controller.Move(move * (moveSpeed * Time.deltaTime));
-
 <<<<<<< Updated upstream
+
         //Jumping
         if(Input.GetButtonDown("Jump") && isGrounded){
+            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            isGrounded = false;
+        }
+
 =======
+/****/
         if (Input.GetAxis("Vertical") > 0.05f){
             animation.Play("Running");
+
         }else{
-            animation.CrossFade("Idle");
             animation.Play("Idle");
         }
 
         //Jumping
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
->>>>>>> Stashed changes
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-            isGrounded = false;
+            isGrounded = false;   
         }
 
+/****/
+
+>>>>>>> Stashed changes
         //Gravity
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);

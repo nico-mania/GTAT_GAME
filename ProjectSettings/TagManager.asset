@@ -11,6 +11,9 @@ TagManager:
   - rotatingBlock
   - pusher
   - smasher
+  - stomper
+  - leftplatformer
+  - rightplatformer
 >>>>>>> Stashed changes
   layers:
   - Default

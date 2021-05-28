@@ -79,6 +79,8 @@ public class PauseMenu : MonoBehaviour
     {
         Debug.Log("continue game");
         SceneManager.LoadScene("MAINJ 1");
+        Time.timeScale = 1f;
+        GameisPaused = false;
     }
 
     public void EndGame()
