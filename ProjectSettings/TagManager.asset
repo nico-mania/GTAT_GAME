@@ -4,8 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - MainMenu
   - rotatingBlock
   - pusher
+  - smasher
+  - stomper
+  - leftplatformer
+  - rightplatformer
   layers:
   - Default
   - TransparentFX

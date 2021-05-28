@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Player_Movement : MonoBehaviour
 {
+    public Animation animation;
     public CharacterController controller;
     public float moveSpeed = 12f;
     public float gravity = -9.81f;
@@ -30,17 +31,27 @@ public class Player_Movement : MonoBehaviour
         //Keyboard Input
         float moveX = Input.GetAxis("Horizontal");
         float moveZ = Input.GetAxis("Vertical");
+        
 
         //Movement
         Vector3 move = transform.right * moveX + transform.forward * moveZ;
         controller.Move(move * (moveSpeed * Time.deltaTime));
+/****/
+        if (Input.GetAxis("Vertical") > 0.05f){
+            animation.Play("Running");
+
+        }else{
+            animation.Play("Idle");
+        }
 
         //Jumping
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-            isGrounded = false;
+            isGrounded = false;   
         }
+
+/****/
 
         //Gravity
         velocity.y += gravity * Time.deltaTime;

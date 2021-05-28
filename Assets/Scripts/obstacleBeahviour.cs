@@ -7,8 +7,12 @@ public class obstacleBeahviour : MonoBehaviour
 {
     public float rotationValue = 2;
     public float pushSpeed = 2;
+    public float platSpeed = 0.1f;
 
     private float max,min;
+
+    public float maxPlatR;
+    public float minPlatR,minPlatL;
 
     private bool isRunningPusher = false;
 
@@ -29,6 +33,19 @@ public class obstacleBeahviour : MonoBehaviour
             case "pusher":
                 transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, Mathf.PingPong(Time.time*10,max-min)+min);
                 break;
+            case "smasher":
+                transform.Rotate(new Vector3(rotationValue, 0, 0));
+                break;
+            case "stomper":
+                transform.localPosition = new Vector3(transform.localPosition.x, Mathf.PingPong(Time.time*20,40-10)+10, transform.localPosition.z);
+                break;
+            case "leftplatformer":
+                transform.localPosition = new Vector3(transform.localPosition.x, Mathf.PingPong(Time.time*platSpeed,minPlatR-minPlatL)+minPlatL, transform.localPosition.z);
+                break;
+            case "rightplatformer":
+                transform.localPosition = new Vector3(transform.localPosition.x, Mathf.PingPong(Time.time*platSpeed,maxPlatR-minPlatR)+minPlatR, transform.localPosition.z);
+                break;
+
         }
     }
 
