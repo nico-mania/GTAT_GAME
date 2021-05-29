@@ -1376,7 +1376,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &245977689
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2828,7 +2828,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &776989460
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3325,6 +3325,7 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
+  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Player_Camera
   m_TagString: MainCamera
@@ -3397,6 +3398,38 @@ Transform:
   m_Father: {fileID: 1591942327}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 18.35, y: 0, z: 0}
+--- !u!114 &963194229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1 &972817249
 GameObject:
   m_ObjectHideFlags: 0
@@ -3561,7 +3594,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0.6666667, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3825,7 +3858,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1228673002
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4070,7 +4103,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1287867570
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4259,6 +4292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Menu: {fileID: 1931154039}
+  OptionsMenu: {fileID: 825003167}
 --- !u!1 &1370452511
 GameObject:
   m_ObjectHideFlags: 0
@@ -5191,7 +5225,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1591942326}
   m_LocalRotation: {x: -0, y: 0.70710707, z: -0, w: 0.70710653}
-  m_LocalPosition: {x: 0.008, y: 1.162, z: 0.623}
+  m_LocalPosition: {x: 0, y: 1.162, z: 0}
   m_LocalScale: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
   m_Children:
   - {fileID: 963194228}
@@ -5211,7 +5245,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedH: 2
-  mouseSens: 20
 --- !u!1 &1629261354 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
@@ -5235,7 +5268,7 @@ CapsuleCollider:
   m_Radius: 0.32
   m_Height: 1.81
   m_Direction: 1
-  m_Center: {x: 0, y: 0.88, z: 0.62}
+  m_Center: {x: 0, y: 0.88, z: 0}
 --- !u!54 &1629261358
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5266,6 +5299,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animation: {fileID: 1629261361}
   controller: {fileID: 1629261360}
+  turner: {fileID: 1591942326}
   moveSpeed: 12
   gravity: -9.81
   jumpHeight: 3
@@ -5286,7 +5320,7 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0.88, z: 0.62}
+  m_Center: {x: 0, y: 0.88, z: 0}
 --- !u!111 &1629261361 stripped
 Animation:
   m_CorrespondingSourceObject: {fileID: -5716681864270162303, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
@@ -5441,7 +5475,7 @@ GameObject:
   - component: {fileID: 1735504771}
   - component: {fileID: 1735504772}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: mousesensslider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5514,12 +5548,24 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1912062785}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 30
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 20
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1591942328}
+        m_TargetAssemblyTypeName: Mouse_Movement, Assembly-CSharp
+        m_MethodName: mouseSensChange
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1740177899
 GameObject:
   m_ObjectHideFlags: 0
@@ -6376,7 +6422,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -1389706179863368070, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.642
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -1056819400175914689, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6964,11 +7010,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8918989078541634527, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.024
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8918989078541634527, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.607
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
@@ -7251,7 +7297,7 @@ GameObject:
   - component: {fileID: 1907082757}
   - component: {fileID: 1907082758}
   m_Layer: 5
-  m_Name: Slider (1)
+  m_Name: soundslider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7362,8 +7408,8 @@ RectTransform:
   m_Father: {fileID: 1524727137}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMin: {x: 0.6666667, y: 0}
+  m_AnchorMax: {x: 0.6666667, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -7858,7 +7904,7 @@ RectTransform:
   m_GameObject: {fileID: 2023430947}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3.3491995, y: 3.3535533, z: 3.3491995}
   m_Children:
   - {fileID: 1545217464}
   m_Father: {fileID: 825003170}
@@ -7866,7 +7912,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -199, y: -362}
+  m_AnchoredPosition: {x: -569, y: 242}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2023430949

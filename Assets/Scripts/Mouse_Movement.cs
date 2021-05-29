@@ -6,7 +6,7 @@ public class Mouse_Movement : MonoBehaviour
 {
 
     public float speedH = 2.0f;
-    public float mouseSens = 100f;
+    public static float mouseSens = 20f;
     
     private float yaw;
 
@@ -18,5 +18,10 @@ public class Mouse_Movement : MonoBehaviour
         // pitch -= speedV * Input.GetAxis("Mouse Y");
 
         transform.eulerAngles = new Vector3(1, yaw, 0.0f);
+    }
+
+    public static void mouseSensChange(float value)
+    {
+        mouseSens = value;
     }
 }

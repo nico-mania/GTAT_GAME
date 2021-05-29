@@ -7,22 +7,24 @@ public class Player_Movement : MonoBehaviour
 {
     public Animation animation;
     public CharacterController controller;
+    public GameObject turner;
     public float moveSpeed = 12f;
     public float gravity = -9.81f;
     public float jumpHeight = 3f;
 
     Vector3 velocity;
     bool isGrounded = true;
+    
 
     // Update is called once per frame
     void Update()
     {
+        // Check if the Player is able to jump by checking if it is on the ground.
         if (controller.isGrounded)
         {
             velocity.y = -2f;
             isGrounded = true;
         }
-
         if (!controller.isGrounded)
         {
             isGrounded = false;
@@ -36,7 +38,6 @@ public class Player_Movement : MonoBehaviour
         //Movement
         Vector3 move = transform.right * moveX + transform.forward * moveZ;
         controller.Move(move * (moveSpeed * Time.deltaTime));
-/****/
         if (Input.GetAxis("Vertical") > 0.05f){
             animation.Play("Running");
 
@@ -50,8 +51,6 @@ public class Player_Movement : MonoBehaviour
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
             isGrounded = false;   
         }
-
-/****/
 
         //Gravity
         velocity.y += gravity * Time.deltaTime;
