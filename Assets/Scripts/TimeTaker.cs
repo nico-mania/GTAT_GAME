@@ -7,6 +7,15 @@ public class TimeTaker : MonoBehaviour
 {
     public static float mapTime = 0;
     private bool timerStart = false;
+
+    private void Start()
+    {
+        if (PlayerPrefs.GetFloat("Highscore") == 0f)
+        {
+            PlayerPrefs.SetFloat("Highscore", 999999f);
+        }
+    }
+
     private void OnTriggerExit(Collider other)
     {
         switch (this.tag)
@@ -35,6 +44,7 @@ public class TimeTaker : MonoBehaviour
     {
         mapTime = 0;
         timerStart = true;
+        Debug.Log(PlayerPrefs.GetFloat("Highscore"));
     }
 
     private void StopTimer()
@@ -42,5 +52,14 @@ public class TimeTaker : MonoBehaviour
         timerStart = false;
         // ToString("F1") cuts anything after the 1st decimal value off
         Debug.Log(mapTime.ToString("F1"));
+        if (mapTime < PlayerPrefs.GetFloat("Highscore"))
+        {
+            PlayerPrefs.SetFloat("Highscore", mapTime);
+        }
+    }
+
+    public void ResetHighScore()
+    {
+        PlayerPrefs.SetFloat("Highscore",999999f);
     }
 }
