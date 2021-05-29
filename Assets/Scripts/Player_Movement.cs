@@ -8,6 +8,7 @@ public class Player_Movement : MonoBehaviour
     public Animation animation;
     public CharacterController controller;
     public GameObject turner;
+    public GameObject model;
     public float moveSpeed = 12f;
     public float gravity = -9.81f;
     public float jumpHeight = 3f;
@@ -36,7 +37,7 @@ public class Player_Movement : MonoBehaviour
         
 
         //Movement
-        Vector3 move = transform.right * moveX + transform.forward * moveZ;
+        Vector3 move = transform.right * moveX + turner.transform.forward * moveZ;
         controller.Move(move * (moveSpeed * Time.deltaTime));
         if (Input.GetAxis("Vertical") > 0.05f){
             animation.Play("Running");
@@ -55,5 +56,7 @@ public class Player_Movement : MonoBehaviour
         //Gravity
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
+
+        model.transform.rotation = Quaternion.Euler(turner.transform.eulerAngles.x,turner.transform.eulerAngles.y-90,turner.transform.eulerAngles.z-83);
     }
 }

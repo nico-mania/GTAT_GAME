@@ -12,6 +12,7 @@ TagManager:
   - leftplatformer
   - rightplatformer
   - Start
+  - turner
   layers:
   - Default
   - TransparentFX
